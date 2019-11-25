@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Element ui表格组件+sortablejs实现行拖拽排序 | 吃和远方Bolg首页</title>
+    <meta name="description" content="吃和远方的前端记录">
+    <link rel="icon" href="/icon.png">
+    
+    <link rel="preload" href="/assets/css/0.styles.3745c988.css" as="style"><link rel="preload" href="/assets/js/app.a1cd01b1.js" as="script"><link rel="preload" href="/assets/js/2.f7bfade3.js" as="script"><link rel="preload" href="/assets/js/6.f4c100ef.js" as="script"><link rel="prefetch" href="/assets/js/10.b9b290d2.js"><link rel="prefetch" href="/assets/js/11.e07399c2.js"><link rel="prefetch" href="/assets/js/3.efa86532.js"><link rel="prefetch" href="/assets/js/4.76cd189f.js"><link rel="prefetch" href="/assets/js/5.da2971d6.js"><link rel="prefetch" href="/assets/js/7.cc3aaa48.js"><link rel="prefetch" href="/assets/js/8.e5b4529a.js"><link rel="prefetch" href="/assets/js/9.c95f65d9.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.3745c988.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><img src="/icon.png" alt="吃和远方Bolg首页" class="logo"> <span class="site-name can-hide">吃和远方Bolg首页</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link">首页</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="分类" class="dropdown-title"><span class="title">分类</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/pages/folder1/test1.html" class="nav-link router-link-exact-active router-link-active">技术</a></li><li class="dropdown-item"><!----> <a href="/pages/folder2/test4.html" class="nav-link">生活</a></li></ul></div></div><div class="nav-item"><a href="https://github.com/liguangshuai1997" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link">首页</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="分类" class="dropdown-title"><span class="title">分类</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/pages/folder1/test1.html" class="nav-link router-link-exact-active router-link-active">技术</a></li><li class="dropdown-item"><!----> <a href="/pages/folder2/test4.html" class="nav-link">生活</a></li></ul></div></div><div class="nav-item"><a href="https://github.com/liguangshuai1997" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading open"><span>Vue</span> <span class="arrow down"></span></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/pages/folder1/test1.html" class="active sidebar-link">Element ui表格组件+sortablejs实现行拖拽排序</a><ul class="sidebar-sub-headers"></ul></li></ul></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Javascript</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Css</span> <span class="arrow right"></span></p> <!----></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h3 id="element-ui表格组件-sortablejs实现行拖拽排序"><a href="#element-ui表格组件-sortablejs实现行拖拽排序" class="header-anchor">#</a> Element ui表格组件+sortablejs实现行拖拽排序</h3> <h4 id="前言"><a href="#前言" class="header-anchor">#</a> 前言</h4> <p>运营小姐姐说想要可以直接拖拽排序的功能，原来在序号六的广告可能会因为金主爸爸加钱换到序号一的位置，拖拽操作就很方便</p> <p><img src="https://user-gold-cdn.xitu.io/2019/8/28/16cd649cf2457a28?w=198&amp;h=169&amp;f=jpeg&amp;s=15452" alt=""></p> <h4 id="效果"><a href="#效果" class="header-anchor">#</a> 效果</h4> <p><img src="https://image-static.segmentfault.com/334/732/3347323746-5d65fbca03a0c_articlex" alt=""></p> <h4 id="实现方式"><a href="#实现方式" class="header-anchor">#</a> 实现方式</h4> <p>template部分</p> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token operator">&lt;</span>el<span class="token operator">-</span>table
+    v<span class="token operator">-</span>loading<span class="token operator">=</span><span class="token string">&quot;loading&quot;</span>
+    <span class="token punctuation">:</span><span class="token keyword">default</span><span class="token operator">-</span>sort<span class="token operator">=</span><span class="token string">&quot;{prop: 'sortNum', order: 'ascending'}&quot;</span>
+    <span class="token punctuation">:</span>data<span class="token operator">=</span><span class="token string">&quot;list&quot;</span>
+    border
+    align<span class="token operator">=</span><span class="token string">&quot;left&quot;</span>
+<span class="token operator">&gt;</span>
+    <span class="token operator">&lt;</span>el<span class="token operator">-</span>table<span class="token operator">-</span>column
+        show<span class="token operator">-</span>overflow<span class="token operator">-</span>tooltip
+        v<span class="token operator">-</span><span class="token keyword">for</span><span class="token operator">=</span><span class="token string">&quot;(item, index) in col&quot;</span>
+        <span class="token punctuation">:</span>key<span class="token operator">=</span><span class="token string">&quot;`col_${index}`&quot;</span>
+        <span class="token punctuation">:</span>prop<span class="token operator">=</span><span class="token string">&quot;col[index].prop&quot;</span>
+        <span class="token punctuation">:</span>label<span class="token operator">=</span><span class="token string">&quot;item.label&quot;</span>
+    <span class="token operator">&gt;</span>
+        <span class="token operator">&lt;</span>template slot<span class="token operator">-</span>scope<span class="token operator">=</span><span class="token string">&quot;scope&quot;</span><span class="token operator">&gt;</span>
+            <span class="token operator">&lt;</span>p<span class="token operator">&gt;</span><span class="token punctuation">{</span><span class="token punctuation">{</span>scope<span class="token punctuation">.</span>row<span class="token punctuation">[</span>item<span class="token punctuation">.</span>prop<span class="token punctuation">]</span><span class="token punctuation">}</span><span class="token punctuation">}</span><span class="token operator">&lt;</span><span class="token operator">/</span>p<span class="token operator">&gt;</span> 
+        <span class="token operator">&lt;</span><span class="token operator">/</span>template<span class="token operator">&gt;</span>
+    <span class="token operator">&lt;</span><span class="token operator">/</span>el<span class="token operator">-</span>table<span class="token operator">-</span>column<span class="token operator">&gt;</span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>el<span class="token operator">-</span>table<span class="token operator">&gt;</span>
+</code></pre></div><p>script部分</p> <div class="language- extra-class"><pre class="language-text"><code>import Sortable from 'sortablejs'
+export default {
+  components: {
+    Sortable
+  },
+  data() {
+    return {
+      col: [
+        {
+          label: '位置',
+          prop: 'location'
+        },
+        {
+          label: '序号',
+          prop: 'sortNum'
+        },
+        {
+          label: '经办人',
+          prop: 'operator'
+        },
+        {
+          label: '操作',
+          prop: 'isClick'
+        }
+      ]
+    }
+  },
+  mounted() {
+    this.rowDrop()
+  },
+  methods: {
+      rowDrop() {
+         const tbody = document.querySelector('.el-table__body-wrapper tbody')
+         Sortable.create(tbody)
+    }
+  }
+}
+</code></pre></div><p><a href="https://github.com/liguangshuai1997/elementTable-Drag" target="_blank" rel="noopener noreferrer">github项目地址<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a>
+下载下来就可以查看了</p></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><!----> <span class="next"><a href="/pages/folder1/test2.html">常用的数组操作</a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.a1cd01b1.js" defer></script><script src="/assets/js/2.f7bfade3.js" defer></script><script src="/assets/js/6.f4c100ef.js" defer></script>
+  </body>
+</html>
